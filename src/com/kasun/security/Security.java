@@ -91,16 +91,7 @@ public class Security {
      * @return Returns plain text after decryption
      */
      
-    public String decrypt(String secretKey, String encryptedText)
-     throws NoSuchAlgorithmException, 
-            InvalidKeySpecException, 
-            NoSuchPaddingException, 
-            InvalidKeyException,
-            InvalidAlgorithmParameterException, 
-            UnsupportedEncodingException, 
-            IllegalBlockSizeException, 
-            BadPaddingException, 
-            IOException{
+    public String decrypt(String secretKey, String encryptedText) throws Exception{
          //Key generation for enc and desc
         KeySpec keySpec = new PBEKeySpec(secretKey.toCharArray(), salt, iterationCount);
         SecretKey key = SecretKeyFactory.getInstance("PBEWithMD5AndDES").generateSecret(keySpec);        

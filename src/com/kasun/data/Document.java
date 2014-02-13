@@ -14,6 +14,11 @@ public class Document {
 		this.password = password;
 	}
 	
+	public void display(){
+		System.out.println("Username : "+this.username);
+		System.out.println("Password : "+this.password);
+	}
+	
 	public String getUsername() {
 		return username;
 	}

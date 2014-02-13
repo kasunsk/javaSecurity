@@ -1,5 +1,6 @@
 package com.kasun.run;
 
+import com.kasun.data.Document;
 import com.kasun.security.Security;
 
 public class Run {
@@ -7,15 +8,13 @@ public class Run {
 	public static void main(String [] args) throws Exception{
 	
 	Security security = new Security();
+	Document document = new Document("username","password");
+	Document encryptedDocument = new Document();
 	
     String key="ezeon8547";   
-    String plain="I am A SrI LAnKaN";
     
-    String enc = security.encrypt(key, plain);;
-    System.out.println("Original text: "+plain);
-    System.out.println("Encrypted text: "+enc);
-    String plainAfter=security.decrypt(key, enc);
-    System.out.println("Original text after decryption: "+plainAfter);
+    encryptedDocument = security.encryptDocument(document,key);
+    encryptedDocument.display();
     
 	}
 }
